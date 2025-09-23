@@ -7,29 +7,118 @@
     <title>webtechnologies week1</title>
     <link rel="stylesheet" href="./src/index.css" />
     <script type="module" src="/src/my-element.js"></script>
+    <script type="module" src="/src/Components/cloneandattach.js"></script>
+    <style>
+      .colored-box {
+        border: 4px solid transparent;
+        border-radius: 20px;
+        padding: 40px;
+        margin: 25px 0;
+        box-shadow: 0 5px 12px rgba(5, 21, 111, 0.1);
+      }
+      .blue-box {
+        border-color: rgb(59, 216, 227);
+        background-color: rgba(228, 244, 246, 0.1);
+      }
+      .pink-box {
+        border-color: rgb(234, 114, 114);
+        background-color: rgba(233, 148, 148, 0.1);
+      }
+      .green-box {
+        border-color: rgb(25, 236, 116);
+        background-color: rgba(111, 212, 155, 0.1);
+      }
+      .purple-box {
+        border-color: rgb(171, 20, 230);
+        background-color: rgba(155, 89, 182, 0.1);
+      }
+      .orange-box {
+        border-color: rgb(243, 156, 18);
+        background-color: rgba(243, 156, 18, 0.1);
+      }
+    </style>
   </head>
  
   <body>
-    <my-element></my-element>
-
-        
+    <!-- Template for shadow DOM component -->
+    <template id="my-template">
+      <div>
+        <style>
+          section {
+            border: 2px solid red;
+            padding: 10px;
+            margin: 10px;
+          }
+          h1 {
+            color: #e99494ff;
+          }
+          p {
+            color: rgb(94, 212, 220);
+          }
+        </style>
         <section>
-          <h2>HTML Elements</h2>
-          <p>This is a paragraph element.</p>
-          <a href="https://www.google.com">This is a link element to Google.</a>
-          <img src="./public/Image1.png" alt="Image 1" />
-          <ul>
-            <li>Item 1</li>
-            <li>Item 2</li>
-            <li>Item 3</li>
-          </ul>
-          <ol>
-            <li>Item 1</li>
-            <li>Item 2</li>
-            <li>Item 3</li>
-          </ol>
+          <h1>Welcome to Web Technologies</h1>
+          <p>This is a custom element using Shadow DOM.</p>
+          <img src="/Image1.png" alt="Custom Image" style="height: 100px;" />
+        </section>
+      </div>
     </template>
-</my-element>
+
+    <!-- Using the Lit component -->
+    <div class="colored-box blue-box">
+      <h2>Lit Web Component</h2>
+      <my-element></my-element>
+    </div>
+    
+    <!-- Using the Shadow DOM component -->
+    <div class="colored-box pink-box">
+      <h2>Shadow DOM Components</h2>
+      <my-template></my-template>
+      <my-template></my-template>
+    </div>
+
+    <!-- Regular HTML content -->
+    <section class="colored-box green-box">
+      <h2>HTML Elements</h2>
+      <p>This is a paragraph element.</p>
+      <a href="https://www.google.com">This is a link element to Google.</a>
+      <img src="/Image1.png" alt="Image 1" />
+    </section>
+
+    <div class="colored-box purple-box">
+      <h2>List Elements</h2>
+      <h3>Unordered List</h3>
+      <ul>
+        <li>Elements for Item 1</li>
+        <li>Elements for Item 2</li>
+        <li>Elements for Item 3</li>
+      </ul>
+
+      <h3>Ordered List</h3>
+      <ol>
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+      </ol>
+    </div>
+
+    <div class="colored-box orange-box">
+      <h2>Table Element</h2>
+      <table>
+        <tr>
+          <th>Header 1</th>
+          <th>Header 2</th>
+        </tr>
+        <tr>
+          <td>Data 1</td>
+          <td>Data 2</td>
+        </tr>
+        <tr>
+          <td>Data 3</td>
+          <td>Data 4</td>
+        </tr>
+      </table>
+    </div>
   </body>
 
 </html>
