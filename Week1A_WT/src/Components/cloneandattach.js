@@ -1,4 +1,4 @@
-
+import  './my-element.js'; // Importing the Lit element
 //Clone and Attach element created to use template for mark up and styles
 customElements.define('my-template', class extends HTMLElement { // define the class
   constructor() { // create a class that extends HTMLElement
