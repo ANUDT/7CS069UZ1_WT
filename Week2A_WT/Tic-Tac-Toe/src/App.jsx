@@ -2,19 +2,21 @@
 import React, { useState } from 'react';
 
 function Square({ value }) {
-  const [squareValue, setSquareValue] = useState(value || null);
+  const [squareValue, setSquareValue] = useState(Array(9).fill(null));
 
   function handleClick() {
-    setSquareValue('X');
-    // Handle square click event        
-    console.log(`Square ${squareValue} clicked!`);
+    const newSquareValue = [...squareValue];
+    newSquareValue[value] = 'X';
+    setSquareValue(newSquareValue);
+    // Handle square click event
+    console.log(`Square ${value} clicked!`);
     console.log('Click handler is working!');
-    alert(`Square ${squareValue} was clicked!`); // Visual confirmation
+    alert(`Square ${value} was clicked!`); // Visual confirmation
   }
 
   return (
     <button className="square" onClick={handleClick}>
-      {squareValue}
+      {squareValue[value]}
     </button>
   );
 }
