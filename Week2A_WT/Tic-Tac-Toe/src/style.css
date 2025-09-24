@@ -1,6 +1,6 @@
 .square {
-  background: #fff;
-  border: 1px solid #f7a3a3;
+  background: #65f473;
+  border: 1px solid #e82e2e;
   float: left;
   font-size: 24px;
   font-weight: bold;
@@ -12,10 +12,13 @@
   text-align: center;
   width: 34px;
 }
+
 .board-row:after {
   content: "";
   display: table;
   clear: both;
-} /* .square:hover {
-  background: #ddd;
-} */
+}
+
+.square:hover {
+  background: #da91e9;
+}
