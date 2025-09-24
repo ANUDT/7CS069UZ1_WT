@@ -1,6 +1,8 @@
 function Square({ value }) {
   function handleClick() {
-    console.log(`Square ${value}  clicked!`);
+    console.log(` Square ${value} clicked!`);
+    console.log('Click handler is working!');
+    alert(`Square ${value} was clicked!`); // Visual confirmation
   }
 
   return (
