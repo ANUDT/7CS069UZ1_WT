@@ -1,6 +1,7 @@
 
 import React, { useState } from 'react';
 
+
 function Square({ value }) {
   const [squareValue, setSquareValue] = useState(Array(9).fill(null));
 
@@ -21,26 +22,24 @@ function Square({ value }) {
   );
 }
 
-export function Board() {
+function Board() {
+  const [squares] = useState(['O', null, 'X', 'X', 'X', 'O', 'O', null, null]);
   return (
     <>
       <div className="board-row">
-        <Square />
-        <Square />
-        <Square />
+        <Square value={squares[0]} />
+        <Square value={squares[1]} />
+        <Square value={squares[2]} />
       </div>
-
       <div className="board-row">
-        <Square />
-        <Square />
-        <Square />
+        <Square value={squares[3]} />
+        <Square value={squares[4]} />
+        <Square value={squares[5]} />
       </div>
-
-      
       <div className="board-row">
-        <Square />
-        <Square />
-        <Square />
+        <Square value={squares[6]} />
+        <Square value={squares[7]} />
+        <Square value={squares[8]} />
       </div>
     </>
   );
